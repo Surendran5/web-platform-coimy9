@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XML HTTP Request</title>
+  </head>
+  <body>
+    <h1>XML HTTP Request</h1>
+    <button type="button" onclick="register()">register</button>
+    <script>
+      function register() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://reqres.in/api/register", true);
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            console.log("registation successful", xhr.responseText);
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
